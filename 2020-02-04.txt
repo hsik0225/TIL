@@ -9,6 +9,8 @@
 - Monster Race Step1 구현 시작
 	- 호눅스에게 1차 Pull&Request 요청
 	
+- 알고리즘 백준 7568번
+	
 ---
 
 ### Monster Race Step1
