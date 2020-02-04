@@ -13,4 +13,4 @@ Today I Learned. Daily Commit.
 
 ---
 
-##3. 피드백
+##3. 배워야 할 것
