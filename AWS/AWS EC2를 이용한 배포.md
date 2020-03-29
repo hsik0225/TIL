@@ -126,12 +126,15 @@ ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
 
 ```bash
     ./gradlew build
-    ./gradlew bootRun
 ```
 
-- 만약 75%에서 멈춘다면 컨트롤 + C를 입력 후 엔터를 누른다
+- 만약 75%에서 빌드가 멈춘다면 컨트롤 + C를 입력 후 엔터를 누른다
 
-정상 빌드
+정상적으로 작동하는지 확인해본다
+
+```bash
+    ./gradlew bootRun
+```
 
 ```bash
       .   ____          _            __ _ _
@@ -163,12 +166,24 @@ ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
      =========|_|==============|___/=/_/_/_/
      :: Spring Boot ::        (v2.2.5.RELEASE)
     
-    29-03-2020 14:30:18.774 [main] INFO  com.codesquad.signup.SignupApplication.logStarting - Starting SignupApplication on ip-172-31-43-241 with PID 1669 (/home/ubuntu/signup-6/BE/build/libs/signup-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/signup-6/BE/build/libs)
-    29-03-2020 14:30:18.779 [main] DEBUG com.codesquad.signup.SignupApplication.logStarting - Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-    29-03-2020 14:30:18.784 [main] INFO  com.codesquad.signup.SignupApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+    29-03-2020 14:30:18.774 [main] INFO  com.codesquad.signup.SignupApplication.logStarting
+    29-03-2020 14:30:18.779 [main] DEBUG com.codesquad.signup.SignupApplication.logStarting
+    29-03-2020 14:30:18.784 [main] INFO  com.codesquad.signup.SignupApplication.logStartupProfileInfo
+```
+> 참고
+일반적으로 Java를 실행시킬때는 java -jar라는 명령어를 사용하지만, 이렇게 할 경우 사용자가 터미널 접속을 끊을 경우 어플리케이션도 같이 종료가 됩니다.
+어플리케이션 실행자가 터미널을 종료시켜도 어플리케이션은 계속 구동될 수 있도록 nohup명령어를 사용합니다.
+
+
+```bash
+    nohup java -jar 파일명.jar
 ```
 
-6. 만들어진 서버로 요청을 보냅니다
+만들어진 서버로 요청을 보냅니다
 ```bash
     public ip:8080
 ```
+
+![확인](https://user-images.githubusercontent.com/56301069/77854762-ac41ee80-71db-11ea-9ef1-57909a8588ab.png)
+
+
