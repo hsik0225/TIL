@@ -1,4 +1,4 @@
-﻿[원본]([https://qiita.com/pottava/items/4c602c97aacf10c058f1](https://qiita.com/pottava/items/4c602c97aacf10c058f1))
+[원글](https://qiita.com/pottava/items/4c602c97aacf10c058f1)
 
 ## 클라우드가 파산하지 않도록 git-secrets를 사용하자!
 
