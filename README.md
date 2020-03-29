@@ -1,16 +1,8 @@
-# TIL
+﻿# TIL
 
----
+## Today I Learned. Daily Commit.
 
-Today I Learned. Daily Commit.
+배운거 정리하기
 
-##1. 오늘 한 것
+## 오역이 있을 수도 있습니다
 
----
-
-
-##2. 오늘 배운 것
-
----
-
-##3. 배워야 할 것
