@@ -31,6 +31,7 @@
 
 3. 왼쪽 메뉴에 있는 세션 관리 탭에서 만든 세션을 더블클릭하면 연결이 된다.
 
+```bash
     Connecting to 3.34.23.92:22...
     Connection established.
     To escape to local shell, press 'Ctrl+Alt+]'.
@@ -51,7 +52,7 @@
     
     33 packages can be updated.
     0 updates are security updates.
-    
+```    
     
 
 ## 자바 8 설치
@@ -144,8 +145,10 @@ ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
 
 5. 실행
 
+```bash
     java -jar 파일명.jar
-
+```
+```bash
      .   ____          _            __ _ _
      /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
     ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -157,7 +160,9 @@ ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
     29-03-2020 14:30:18.774 [main] INFO  com.codesquad.signup.SignupApplication.logStarting - Starting SignupApplication on ip-172-31-43-241 with PID 1669 (/home/ubuntu/signup-6/BE/build/libs/signup-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/signup-6/BE/build/libs)
     29-03-2020 14:30:18.779 [main] DEBUG com.codesquad.signup.SignupApplication.logStarting - Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
     29-03-2020 14:30:18.784 [main] INFO  com.codesquad.signup.SignupApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+```
 
 6. 만들어진 서버로 요청을 보냅니다
-
+```bash
     public ip:8080
+```
