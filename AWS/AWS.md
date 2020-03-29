@@ -117,6 +117,8 @@ Review And Launch
 윈도우는 SSH를 가지고 있기 땜누에 원격 제어 역할을 하는 프로그램을 깔아야 한다. Putty도 있지만, 여기서는 Xshell6를 사용한다
 이 [링크](https://www.netsarang.com/ko/free-for-home-school/)에서 XShell6를 다운받는다.
 
+만약 PuTTY를 이용하여 SSH를 접속하고 싶다면 [여기](https://github.com/hsik0225/TIL/blob/master/AWS/PuTTY%EB%A1%9C%20EC2%20%EC%A0%91%EC%86%8D.md)에서 확인할 수 있다.
+
 1. 자신의 인스턴스의 창에서 IPv4 퍼블릭 IP를 복사한다(ex.54.238.222.246)
 
 2. 내가 만든 인스턴스에서 오른쪽 버튼을 클릭 후 「연결」 을 누른다
@@ -171,56 +173,3 @@ ubuntu@ip-172-31-43-241:~$ ^C
 만약 종료하고 싶다면 exit 를 입력한다
 
 다시 접속 하고 싶다면 Xshell 왼쪽 메뉴에서 만든 세션을 더블클릭해준다
-
-## 웹 서버 생성
-
-1. 접속한 서버에서 `sudo apt-get install apache2` 를 입력하여 설치한다
-만약 Unable to fetch some, archives, maybe run ~~ 에러가 발생한다면,
-
-`sudo apt-get update;` 를 입력하고 다시 `sudo apt-get install apache2`를 입력한다
-
-2. 접속을 할 때는 인스턴스의 IP나 도메인을 알아야한다
-인스턴스 아래에 설명 탭에서 IP와 도메인을 알 수 있다
-	IP : IPv4 퍼블릭 IP
-	도메인 : 퍼블릭 DNS
-
-3. 인스턴스의 서버가 아닌 원래 OS에서 IP나 도메인을 윈도우 탭에서 붙여넣기 해본다
-![아파치](https://user-images.githubusercontent.com/56301069/77841089-14fa7e00-717e-11ea-8f83-12da12f28c25.png)
-
-4. index.html 파일 변경
-나온 html 파일은 /var/www/html 경로에 있다
-
-이 파일을 변경해보기 위해 `cd /var/www/html`를 입력한다
-
-5. ls 를 눌러보면 index.html 이 나온다
-
-```bash
-ubuntu@ip-172-31-43-241:/var/www/html$ ls
-index.html
-```
-
-6. sudo rm -rf index.html 을 입력하여 index.html 파일을 삭제
-
-7. 파일을 새로 만든다
-
-```
-sudo vi index.html
-```
-
-8. HTML 파일 내용 입력
-
-```
-<html>
-        <body>
-                Hello AWS
-        </body>
-</html>
-```
-
-9. 다시 인스턴스 서버가 아닌 원래 OS로 돌아와서 아까 입력했던 도메인 또는 IP를 입력한다
-
-10. Hello AWS가 출력된다!
-
-## 스프링 부트 띄워보기
-
-## 

@@ -105,28 +105,35 @@
 
 1. 프로젝트를 빌드하기 위해 자신의 폴더로 이동합니다
 
+```bash
     ubuntu@ip-172-31-43-241:~$ cd signup-6/BE
     ubuntu@ip-172-31-43-241:~/signup-6/BE$ ls
     build.gradle  gradle  gradlew  gradlew.bat  logs  settings.gradle  src
     ubuntu@ip-172-31-43-241:~/signup-6/BE$ 
+```
 
 2. checkout으로 배포할 자신의 브랜치로 이동합니다
 
 3. gradlew 파일에 권한을 부여합니다
 
+```bash
     sudo chmod 777 ./gradlew
+```
 
 ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
 
 3. 아래 명령어를 통해 빌드합니다
 
+```bash
     ./gradlew build
     ./gradlew bootRun
+```
 
 - 만약 75%에서 멈춘다면 컨트롤 + C를 입력 후 엔터를 누른다
 
 정상 빌드
 
+```bash
       .   ____          _            __ _ _
      /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
     ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -134,18 +141,17 @@ ls 명령어를 쳤을 때 초록색으로 표시가 되어야합니다
       '  |____| .__|_| |_|_| |_\__, | / / / /
      =========|_|==============|___/=/_/_/_/
      :: Spring Boot ::        (v2.2.5.RELEASE)
-    
+```    
     
 
-정상 접속 확인
+### 정상 접속 확인
 
 ./build/libs 폴더 안에 jar 파일이 생성되었습니다
 
 - 스프링 부트에서는 톰캣 서버가 내장되어있기 때문에 빌드된 파일만 실행하면 서버가 가동됩니다
 
-5. 실행
-
 ```bash
+    cd build/libs
     java -jar 파일명.jar
 ```
 ```bash
