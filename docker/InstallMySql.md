@@ -30,18 +30,63 @@ default-character-set = utf8
 default-character-set = utf8
 ```
 
+docker-compose.yml 파일을 이용하여 자동으로 컨테이너를 생성해보자
+```
+version: '3.8'
+
+services:
+  db:
+      container_name: sql
+	      image: mysql:5.7
+		      restart: always
+			      ports:
+				       - 3306:3306
+					       volumes:
+						        - /Users/kimhyunsik/Desktop/docker/mysql/conf:/etc/mysql/conf.d
+								    environment:
+									     - MYSQL_ROOT_PASSWORD=asdqwe1!
+										      - MYSQL_DATABASE=baseball
+											       - MYSQL_USER=ever
+												        - MYSQL_PASSWORD=asdqwe1!
+```
+이 yml 파일을 자신이 원하는 폴더에 생성한다
+
+> -d 옵션
+docker run 에서 d옵션으로  백그라운드(터미널을 꺼도 실행되어 있는 상태, d옵션이 없으면 터미널이 꺼지면 docker도 꺼진다) 에서 실행하였었다
+
+docker-compose에서도 -d 옵션으로 실행한다
+
+```docker
+docer-compose up -d
+```
+
 ```docker
 > docker pull mysql:5.7
 > docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 mysql               5.7                 f965319e89de        9 days ago          448MB
 
+```
+
+## docker-compse.yml
+여기서 yml 파일로 실행한다
+
+```dcoker
+docker-compose up -d
+```
+
+### docker-run
+yml 파일을 이용하지 않고 run으로 싫행한다
+```
 > docker run -d --name sql -p 3306:3306 -v /Users/kimhyunsik/Desktop/docker/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=asdqwe1! mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 > docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                               NAMES
 070ab2bff1b6        mysql:5.7           "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3306->3306/tcp, 33060/tcp   baseball_mysql
+```
 
+생성된 컨테이너를 실행시킨다
+```
 > docker exec -it sql /bin/bash
 ```
 
@@ -58,7 +103,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ```sql
 > mysql -u root -p
-mysql> ALTER user 'root'@'%' IDENTIFIED WITH mysql_native_password BY '변경할비밀번호';
+mysql> ALTER user 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'asdqwe1!';
 mysql> flush privileges;
 
 mysql> CREATE USER 'ever'@`%` IDENTIFIED BY 'asdqwe1!';
