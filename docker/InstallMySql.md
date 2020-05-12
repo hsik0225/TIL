@@ -36,18 +36,18 @@ version: '3.8'
 
 services:
   db:
-      container_name: sql
-	      image: mysql:5.7
-		      restart: always
-			      ports:
-				       - 3306:3306
-					       volumes:
-						        - /Users/kimhyunsik/Desktop/docker/mysql/conf:/etc/mysql/conf.d
-								    environment:
-									     - MYSQL_ROOT_PASSWORD=asdqwe1!
-										      - MYSQL_DATABASE=baseball
-											       - MYSQL_USER=ever
-												        - MYSQL_PASSWORD=asdqwe1!
+    container_name: sql
+    image: mysql:5.7
+    restart: always
+    ports:
+     - 3306:3306
+    volumes:
+     - /Users/kimhyunsik/Desktop/docker/mysql/conf:/etc/mysql/conf.d
+    environment:
+     - MYSQL_ROOT_PASSWORD=asdqwe1!
+     - MYSQL_DATABASE=baseball
+     - MYSQL_USER=ever
+     - MYSQL_PASSWORD=asdqwe1!
 ```
 이 yml 파일을 자신이 원하는 폴더에 생성한다
 
