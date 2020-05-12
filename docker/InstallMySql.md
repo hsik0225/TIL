@@ -1,5 +1,35 @@
 ### Install & Boot
 
+자신이 conf파일을 저장하고자 하는 폴더를 생성한다
+나는 Desktop/docker/mysql/conf 폴더를 생성했다
+
+여기에 docker mysql에 적용시킬 cnf 파일을 생성한다
+
+```
+> cd Desktop/docker/mysql/conf
+
+> vi custom.cnf
+```
+
+> 복사, 붙여넣기 후 저장(:wq)
+```sql
+[client]
+default-character-set = utf8
+
+[mysqld]
+init_connect = SET collation_connection = utf8_general_ci
+init_connect = SET NAMES utf8
+character-set-server = utf8
+collation-server = utf8_general_ci
+lower_case_table_names = 1
+
+[mysqldump]
+default-character-set = utf8
+
+[mysql]
+default-character-set = utf8
+```
+
 ```docker
 > docker pull mysql:5.7
 > docker images
@@ -39,26 +69,6 @@ mysql> GRANT ALL ON mydb.* TO 'ever'@'%' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
 ```
 
-- /etc/mysql/my.cnf
-
-```sql
-[client]
-default-character-set = utf8
-
-[mysqld]
-init_connect = SET collation_connection = utf8_general_ci
-init_connect = SET NAMES utf8
-character-set-server = utf8
-collation-server = utf8_general_ci
-lower_case_table_names = 1
-
-[mysqldump]
-default-character-set = utf8
-
-[mysql]
-default-character-set = utf8
-```
-
 ```sql
 mysql> status
 
@@ -68,3 +78,9 @@ Db     characterset:	utf8
 Client characterset:	utf8
 Conn.  characterset:	utf8
 ...
+
+- 제대로 cnf가 적용되었는지 확인
+mysql> show varialbes like 'lower_case_table_names';
+
+기존 Value 0
+적용 Value 1
