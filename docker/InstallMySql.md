@@ -58,14 +58,13 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ```sql
 > mysql -u root -p
-mysql> update mysql.user set plugin='mysql_native_password' where user='root';
 mysql> ALTER user 'root'@'%' IDENTIFIED WITH mysql_native_password BY '변경할비밀번호';
 mysql> flush privileges;
 
 mysql> CREATE USER 'ever'@`%` IDENTIFIED BY 'asdqwe1!';
 mysql> create database mydb;
 mysql> show databases;
-mysql> GRANT ALL ON mydb.* TO 'ever'@'%' WITH GRANT OPTION;
+mysql> GRANT ALL ON *.* TO 'ever'@'%' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
 ```
 
