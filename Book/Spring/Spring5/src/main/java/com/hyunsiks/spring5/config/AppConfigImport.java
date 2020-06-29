@@ -8,11 +8,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 @Import(AppContext.class)
 @ComponentScan(
-        basePackages = {"spring5"},
-        excludeFilters = {
-                @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Member.class),
-                @ComponentScan.Filter(type = FilterType.REGEX, pattern = "spring5\\..*")
-        }
+        basePackages = {"spring5"}
 )
 public class AppConfigImport {
 
