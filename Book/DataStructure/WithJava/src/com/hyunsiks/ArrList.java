@@ -36,8 +36,8 @@ public class ArrList<E> {
             resize(2*items.length);
         }
 
-        for (int i = index; i < size-1; i++) {
-            items[i+1] = items[i];
+        for (int i = size; i >= index; i--) {
+            items[i] = items[i-1];
         }
 
         items[index] = item;
@@ -52,7 +52,7 @@ public class ArrList<E> {
 
         E item = items[index];
 
-        for (int i = index; i < size-1; i++) {
+        for (int i = index; i < size; i++) {
             items[i] = items[i+1];
         }
 
@@ -65,11 +65,67 @@ public class ArrList<E> {
         return item;
     }
 
-    private void resize(int newSize) {
+    public void peekAll() {
+        StringBuilder result = new StringBuilder();
 
+        for (int i = 0; i < items.length; i++) {
+            String peekValue = String.valueOf(peek(i));
+            result.append(peekValue).append(" ");
+        }
+
+        System.out.println(result.toString());
+    }
+
+    private void resize(int newSize) {
+        System.out.println("Run Resize");
+
+        Object[] t = new Object[newSize];
+
+        for (int i = 0; i < size; i++) {
+            t[i] = items[i];
+        }
+
+        this.items = (E[]) t;
     }
 
     public static void main(String[] args) {
+        ArrList<String> arrList = new ArrList<>();
+        arrList.insertLast("apple");
+        arrList.peekAll();
 
+        arrList.insertLast("orange");
+        arrList.peekAll();
+
+        arrList.insertLast("cherry");
+        arrList.peekAll();
+
+        arrList.insertLast("peer");
+        arrList.peekAll();
+
+        arrList.insert("grape", 1);
+        arrList.peekAll();
+
+        arrList.insert("lemon", 4);
+        arrList.peekAll();
+
+        arrList.insertLast("kiwi");
+        arrList.peekAll();
+
+        arrList.delete(4);
+        arrList.peekAll();
+
+        arrList.delete(0);
+        arrList.peekAll();
+
+        arrList.delete(0);
+        arrList.peekAll();
+
+        arrList.delete(3);
+        arrList.peekAll();
+
+        arrList.delete(0);
+        arrList.peekAll();
+
+        System.out.println("첫 번째 항목은 " + arrList.peek(1) + "입니다");
     }
 }
