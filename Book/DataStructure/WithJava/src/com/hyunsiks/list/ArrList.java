@@ -1,4 +1,4 @@
-package com.hyunsiks;
+package com.hyunsiks.list;
 
 import java.util.NoSuchElementException;
 
