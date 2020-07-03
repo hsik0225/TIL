@@ -1,9 +1,9 @@
-package com.hyunsiks.list.simply;
+package com.hyunsiks.list.singly;
 
-public class MainSimply {
+public class MainSingly {
 
     public static void main(String[] args) {
-        SimplyLinkedList<String> linkedList = new SimplyLinkedList<>();
+        SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
         linkedList.insertFront("cherry");
         linkedList.insertFront("orange");
         linkedList.insertFront("pear");
@@ -11,7 +11,7 @@ public class MainSimply {
 
         linkedList.findAll();
 
-        linkedList.insert("kiwi", linkedList.head.nextSimplyNode.nextSimplyNode);
+        linkedList.insert("kiwi", linkedList.head.nextSinglyNode.nextSinglyNode);
 
         linkedList.findAll();
 

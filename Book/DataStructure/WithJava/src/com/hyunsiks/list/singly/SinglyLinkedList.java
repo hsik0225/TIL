@@ -1,42 +1,42 @@
-package com.hyunsiks.list.simply;
+package com.hyunsiks.list.singly;
 
 import java.util.NoSuchElementException;
 
-public class SimplyLinkedList<E> {
+public class SinglyLinkedList<E> {
 
-    public SimplyNode<E> head;
+    public SinglyNode<E> head;
 
     public int size;
 
-    public SimplyLinkedList() {
+    public SinglyLinkedList() {
         this.head = null;
         this.size = 0;
     }
 
     public int search(E target) {
-        SimplyNode<E> tempHead = this.head;
+        SinglyNode<E> tempHead = this.head;
 
         for (int i = 0; i < size; i++) {
             if (target == tempHead.item) {
                 return i;
             }
-            tempHead = tempHead.nextSimplyNode;
+            tempHead = tempHead.nextSinglyNode;
         }
 
         return -1;
     }
 
     public void insertFront(E newItem) {
-        this.head = new SimplyNode<>(this.head, newItem);
+        this.head = new SinglyNode<>(this.head, newItem);
         size++;
     }
 
     // targetNode 다음에 새 노드 삽입
-    public void insert(E newItem, SimplyNode<E> targetSimplyNode) {
-        SimplyNode<E> nextSimplyNode = targetSimplyNode.nextSimplyNode;
-        SimplyNode<E> simplyNode = new SimplyNode<>(nextSimplyNode, newItem);
+    public void insert(E newItem, SinglyNode<E> targetSinglyNode) {
+        SinglyNode<E> nextSinglyNode = targetSinglyNode.nextSinglyNode;
+        SinglyNode<E> singlyNode = new SinglyNode<>(nextSinglyNode, newItem);
 
-        targetSimplyNode.setNextSimplyNode(simplyNode);
+        targetSinglyNode.setNextSinglyNode(singlyNode);
 
         size++;
     }
@@ -46,20 +46,20 @@ public class SimplyLinkedList<E> {
             throw new NoSuchElementException();
         }
 
-        this.head = this.head.nextSimplyNode;
+        this.head = this.head.nextSinglyNode;
 
         size--;
     }
 
     // targetNode가 가리키는 노드의 다음 노드를 삭제
-    public void delete(SimplyNode<E> targetSimplyNode) {
+    public void delete(SinglyNode<E> targetSinglyNode) {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
 
-        SimplyNode<E> deleteSimplyNode = targetSimplyNode.nextSimplyNode;
-        targetSimplyNode.setNextSimplyNode(deleteSimplyNode.nextSimplyNode);
-        deleteSimplyNode.setNextSimplyNode(null);
+        SinglyNode<E> deleteSinglyNode = targetSinglyNode.nextSinglyNode;
+        targetSinglyNode.setNextSinglyNode(deleteSinglyNode.nextSinglyNode);
+        deleteSinglyNode.setNextSinglyNode(null);
 
         size--;
     }
@@ -67,11 +67,11 @@ public class SimplyLinkedList<E> {
     public void findAll() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        SimplyNode<E> simplyNode = this.head;
+        SinglyNode<E> singlyNode = this.head;
 
         for (int i = 0; i < size; i++) {
-            stringBuilder.append(simplyNode.item).append(" ");
-            simplyNode = simplyNode.nextSimplyNode;
+            stringBuilder.append(singlyNode.item).append(" ");
+            singlyNode = singlyNode.nextSinglyNode;
         }
 
         System.out.println(stringBuilder.toString() + " : 길이 = " + size);
