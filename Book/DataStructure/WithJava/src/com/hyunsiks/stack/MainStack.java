@@ -13,5 +13,18 @@ public class MainStack {
         stack.pop();
         stack.pop();
         stack.pop();
+
+        System.out.println(" ============= List Stack =============");
+
+        ListStack<String> listStack = new ListStack<>();
+        listStack.push("apple");
+        listStack.push("orange");
+        listStack.push("cherry");
+        listStack.push("pear");
+
+        listStack.pop();
+        listStack.pop();
+        listStack.pop();
+        listStack.pop();
     }
 }

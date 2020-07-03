@@ -66,8 +66,6 @@ public class ArrayStack<E> {
     }
 
     private void resize(int size) {
-        System.out.println("Run Resize");
-
         Object[] objects = new Object[size];
 
         for (int i = 0; i < size(); i++) {
