@@ -1,4 +1,4 @@
-package com.hyunsiks.spring5;
+package com.hyunsiks.spring5.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;

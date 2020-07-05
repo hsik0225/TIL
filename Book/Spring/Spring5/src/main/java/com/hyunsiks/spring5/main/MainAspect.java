@@ -1,6 +1,6 @@
 package com.hyunsiks.spring5.main;
 
-import com.hyunsiks.spring5.Calculator;
+import com.hyunsiks.spring5.aspect.Calculator;
 import com.hyunsiks.spring5.config.AppAspectCtx;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -1,9 +1,9 @@
 package com.hyunsiks.spring5.config;
 
-import com.hyunsiks.spring5.CacheAspect;
-import com.hyunsiks.spring5.Calculator;
-import com.hyunsiks.spring5.ExeTimeAspect;
-import com.hyunsiks.spring5.RecCalculator;
+import com.hyunsiks.spring5.aspect.CacheAspect;
+import com.hyunsiks.spring5.aspect.Calculator;
+import com.hyunsiks.spring5.aspect.ExeTimeAspect;
+import com.hyunsiks.spring5.aspect.RecCalculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
