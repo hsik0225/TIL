@@ -1,9 +1,9 @@
 package com.hyunsiks.spring5.service;
 
 import com.hyunsiks.spring5.exception.DuplicateMemberException;
-import com.hyunsiks.spring5.Member;
+import com.hyunsiks.spring5.domain.Member;
 import com.hyunsiks.spring5.dao.MemberDao;
-import com.hyunsiks.spring5.RegisterRequest;
+import com.hyunsiks.spring5.domain.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,8 @@
 package com.hyunsiks.spring5.config;
 
-import com.hyunsiks.spring5.*;
 import com.hyunsiks.spring5.dao.MemberDao;
+import com.hyunsiks.spring5.domain.Greeter;
+import com.hyunsiks.spring5.domain.MemberPrinter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 

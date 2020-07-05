@@ -1,9 +1,9 @@
 package com.hyunsiks.spring5.config;
 
-import com.hyunsiks.spring5.MemberInfoPrinter;
-import com.hyunsiks.spring5.MemberListPrinter;
-import com.hyunsiks.spring5.MemberSummaryPrinter;
-import com.hyunsiks.spring5.VersionPrinter;
+import com.hyunsiks.spring5.domain.MemberInfoPrinter;
+import com.hyunsiks.spring5.domain.MemberListPrinter;
+import com.hyunsiks.spring5.domain.MemberSummaryPrinter;
+import com.hyunsiks.spring5.domain.VersionPrinter;
 import com.hyunsiks.spring5.service.ChangePasswordService;
 import com.hyunsiks.spring5.service.MemberRegisterService;
 import org.springframework.context.annotation.Bean;

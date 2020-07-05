@@ -1,6 +1,6 @@
 package com.hyunsiks.spring5.service;
 
-import com.hyunsiks.spring5.Member;
+import com.hyunsiks.spring5.domain.Member;
 import com.hyunsiks.spring5.dao.MemberDao;
 import com.hyunsiks.spring5.exception.MemberNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

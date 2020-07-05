@@ -1,4 +1,4 @@
-package com.hyunsiks.spring5;
+package com.hyunsiks.spring5.domain;
 
 import com.hyunsiks.spring5.dao.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;

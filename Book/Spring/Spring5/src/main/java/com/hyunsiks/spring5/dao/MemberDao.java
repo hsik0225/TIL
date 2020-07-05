@@ -1,6 +1,6 @@
 package com.hyunsiks.spring5.dao;
 
-import com.hyunsiks.spring5.Member;
+import com.hyunsiks.spring5.domain.Member;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;

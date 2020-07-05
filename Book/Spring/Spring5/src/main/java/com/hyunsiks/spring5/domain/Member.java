@@ -1,4 +1,4 @@
-package com.hyunsiks.spring5;
+package com.hyunsiks.spring5.domain;
 
 import com.hyunsiks.spring5.exception.WrongPasswordException;
 

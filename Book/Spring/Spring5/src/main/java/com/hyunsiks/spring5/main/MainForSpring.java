@@ -1,7 +1,10 @@
 package com.hyunsiks.spring5.main;
 
-import com.hyunsiks.spring5.*;
 import com.hyunsiks.spring5.config.AppConfigImport;
+import com.hyunsiks.spring5.domain.MemberInfoPrinter;
+import com.hyunsiks.spring5.domain.MemberListPrinter;
+import com.hyunsiks.spring5.domain.RegisterRequest;
+import com.hyunsiks.spring5.domain.VersionPrinter;
 import com.hyunsiks.spring5.exception.DuplicateMemberException;
 import com.hyunsiks.spring5.exception.MemberNotFoundException;
 import com.hyunsiks.spring5.exception.WrongPasswordException;

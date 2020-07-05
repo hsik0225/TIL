@@ -1,4 +1,4 @@
-package com.hyunsiks.spring5;
+package com.hyunsiks.spring5.domain;
 
 public class MemberSummaryPrinter extends MemberPrinter {
 
