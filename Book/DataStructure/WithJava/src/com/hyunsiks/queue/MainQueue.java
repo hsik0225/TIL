@@ -16,5 +16,18 @@ public class MainQueue {
         queue.add("mango");
         queue.add("lime");
         queue.add("kiwi");
+
+        System.out.println("======================= List Queue Start ========================");
+
+        ListQueue<String> listQueue = new ListQueue<>();
+        listQueue.add("apple");
+        listQueue.add("orange");
+        listQueue.add("cherry");
+        listQueue.add("pear");
+
+        listQueue.remove();
+        listQueue.remove();
+
+        listQueue.add("grape");
     }
 }
