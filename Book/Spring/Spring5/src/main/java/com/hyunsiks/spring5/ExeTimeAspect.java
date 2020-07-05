@@ -21,10 +21,8 @@ public class ExeTimeAspect {
         long start = System.nanoTime();
 
         try {
-            System.out.println("Method start");
             return joinPoint.proceed();
         } finally {
-            System.out.println("Method end");
             long finish = System.nanoTime();
             Signature signature = joinPoint.getSignature();
 
