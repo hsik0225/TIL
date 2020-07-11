@@ -4,23 +4,25 @@ import java.util.NoSuchElementException;
 
 public class DoublyLinkedList<E> {
 
-    private DoublyNode<E> front;
+    private DoublyNode<E> head;
+
+    private DoublyNode<E> tail;
 
     private int size;
 
     public DoublyLinkedList() {
-        this.front = null;
-        size = 0;
+        this.head = new DoublyNode<>(null, null, null);
+        this.tail = new DoublyNode<>(null, head, null);
     }
 
     public void addFront(E item) {
         if (isEmpty()) {
-            this.front = new DoublyNode<>(item);
+            this.head = new DoublyNode<>(item);
 
         } else {
-            DoublyNode<E> frontDoublyNode = this.front;
-            this.front = new DoublyNode<>(null, frontDoublyNode, item);
-            this.front.nextDoublyNode.setPreviousDoublyNode(frontDoublyNode);
+            DoublyNode<E> frontDoublyNode = this.head;
+            this.head = new DoublyNode<>(null, frontDoublyNode, item);
+            this.head.nextDoublyNode.setPreviousDoublyNode(frontDoublyNode);
         }
 
         size++;
@@ -30,10 +32,10 @@ public class DoublyLinkedList<E> {
 
     public void addEnd(E item) {
         if (isEmpty()) {
-            this.front = new DoublyNode<>(item);
+            this.head = new DoublyNode<>(item);
 
         } else {
-            DoublyNode<E> temp = this.front;
+            DoublyNode<E> temp = this.head;
 
             // Traverse till end of list
             while (temp.nextDoublyNode != null) {
@@ -62,7 +64,7 @@ public class DoublyLinkedList<E> {
         if(current.previousDoublyNode != null) {
             current.previousDoublyNode.setNextDoublyNode(newDoublyNode);
         } else {
-            this.front = newDoublyNode;
+            this.head = newDoublyNode;
         }
 
         current.previousDoublyNode = newDoublyNode;
@@ -96,14 +98,14 @@ public class DoublyLinkedList<E> {
 
     public void remove(E item) {
 
-        // List is empty, can't add
+        // List is empty, can't remove
         if (isEmpty()) {
             throw new NoSuchElementException("Element " + item.toString() + " not found");
         }
 
         // Removing front element
-        if (front.item.equals(item)) {
-            this.front = this.front.nextDoublyNode;
+        if (head.item.equals(item)) {
+            this.head = this.head.nextDoublyNode;
             System.out.println(toString());
             return;
         }
@@ -131,7 +133,7 @@ public class DoublyLinkedList<E> {
     }
 
     public DoublyNode<E> searchNode(E item) {
-        DoublyNode<E> current = front;
+        DoublyNode<E> current = head;
 
         while (current != null && !current.item.equals(item)) {
             current = current.nextDoublyNode;
@@ -151,7 +153,7 @@ public class DoublyLinkedList<E> {
             return "리스트 비어있음";
         }
 
-        DoublyNode<E> temp = this.front;
+        DoublyNode<E> temp = this.head;
 
         StringBuilder stringBuilder = new StringBuilder();
 
