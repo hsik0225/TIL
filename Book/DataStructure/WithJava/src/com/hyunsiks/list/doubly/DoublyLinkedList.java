@@ -40,6 +40,63 @@ public class DoublyLinkedList<E> {
         head.setNextDoublyNode(tail);
     }
 
+    /**
+     * Links e as first element.
+     */
+    private void linkFirst(E item) {
+        final DoublyNode<E> first = head;
+        final DoublyNode<E> newNode = new DoublyNode<>(null, first, item);
+        head = newNode;
+        if (first == null)
+            tail  = newNode;
+        else
+            first.previousDoublyNode = newNode;
+        size++;
+    }
+
+    /**
+     * Links e as first element.
+     */
+    private void linkLast(E item) {
+        final DoublyNode<E> last = tail;
+        final DoublyNode<E> newNode = new DoublyNode<>(last, null, item);
+        tail = newNode;
+        if (last == null)
+            head = newNode;
+        else
+            last.nextDoublyNode = newNode;
+        size++;
+    }
+
+    /**
+     * Unlinks non-null node x.
+     */
+    private E unlink(DoublyNode<E> node) {
+
+        // assert x != null;
+        final E element = node.item;
+        final DoublyNode<E> next = node.nextDoublyNode;
+        final DoublyNode<E> prev = node.previousDoublyNode;
+
+        if (prev == null)
+            head = next;
+        else {
+            prev.nextDoublyNode = next;
+            node.previousDoublyNode = null;
+        }
+
+        if (next == null)
+            tail = prev;
+        else {
+            next.previousDoublyNode = prev;
+            node.nextDoublyNode = null;
+        }
+
+        node.item = null;
+        size--;
+        return element;
+    }
+
     // node가 가리키는 노드 앞에 삽입
     public void insertBefore(DoublyNode<E> node, E item) {
          DoublyNode<E> previousNode = node.previousDoublyNode;
@@ -73,6 +130,25 @@ public class DoublyLinkedList<E> {
 
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    public boolean remove(Object o) {
+        if (o == null) {
+            for (DoublyNode<E> node = head; node != null; node = node.nextDoublyNode) {
+                if (node.item == null) {
+                    unlink(node);
+                    return true;
+                }
+            }
+        } else {
+            for (DoublyNode<E> node = head; node != null; node = node.nextDoublyNode) {
+                if (o.equals(node.item)) {
+                    unlink(node);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
