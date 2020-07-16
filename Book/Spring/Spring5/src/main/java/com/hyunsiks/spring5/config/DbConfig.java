@@ -1,5 +1,6 @@
 package com.hyunsiks.spring5.config;
 
+import com.hyunsiks.spring5.dao.MemberDao;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,5 +25,10 @@ public class DbConfig {
         dataSource.setInitialSize(2);
         dataSource.setMaxActive(10);
         return dataSource;
+    }
+
+    @Bean
+    public MemberDao memberDao() {
+        return new MemberDao(dataSource());
     }
 }

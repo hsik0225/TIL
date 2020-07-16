@@ -1,6 +1,5 @@
 package com.hyunsiks.spring5.config;
 
-import com.hyunsiks.spring5.dao.MemberDao;
 import com.hyunsiks.spring5.domain.Greeter;
 import com.hyunsiks.spring5.domain.MemberPrinter;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,11 +17,6 @@ public class AppConfigImport {
         Greeter g = new Greeter();
         g.setFormat("%s, 안녕하세요!");
         return g;
-    }
-
-    @Bean
-    public MemberDao memberDao() {
-        return new MemberDao();
     }
 
     @Bean
