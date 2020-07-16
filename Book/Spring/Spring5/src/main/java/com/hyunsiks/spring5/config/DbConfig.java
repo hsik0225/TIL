@@ -23,5 +23,6 @@ public class DbConfig {
         dataSource.setPassword("asdqwe1!");
         dataSource.setInitialSize(2);
         dataSource.setMaxActive(10);
+        return dataSource;
     }
 }
