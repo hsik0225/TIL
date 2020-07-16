@@ -6,7 +6,6 @@ import com.hyunsiks.spring5.domain.Member;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class MainForMemberDao {
@@ -17,9 +16,9 @@ public class MainForMemberDao {
 
         memberDao = ctx.getBean(MemberDao.class);
 
-         selectAll();
-         updateMember();
-         insertMember();
+        selectAll();
+        insertMember();
+        updateMember();
 
          ctx.close();
     }
@@ -44,18 +43,19 @@ public class MainForMemberDao {
         String newPw = Double.toHexString(Math.random());
         member.changePassword(oldPw, newPw);
 
+        System.out.println("oldPw = " + oldPw);
+        System.out.println("newPw = " + newPw);
+
         memberDao.update(member);
         System.out.println("암호 변경 : " + oldPw + " > " + newPw);
     }
 
-    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMddHHmmss");
-
     public static void insertMember() {
         System.out.println("--------insertMember");
 
-        String prefix = formatter.format(LocalDateTime.now());
-        Member member = new Member(prefix + "@test.com", prefix, prefix, LocalDateTime.now());
+        String prefix = "hsik0225";
+        Member member = new Member(prefix + "@gmail.com", prefix, prefix, LocalDateTime.now());
         memberDao.insert(member);
-        System.out.println(member.getId() + "데이터 추가");
+        System.out.println(member.getId() + " 데이터 추가");
     }
 }

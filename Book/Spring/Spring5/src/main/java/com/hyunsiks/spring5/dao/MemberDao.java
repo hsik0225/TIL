@@ -37,7 +37,7 @@ public class MemberDao {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement preparedStatement = con.prepareStatement(
-                        "INSERT INTO member (email, password, name, register_date_time) " +
+                        "INSERT INTO member (email, password, name, regdate) " +
                                 "VALUES (?, ?, ?, ?)",
 
                         // 자동 생성되는 키 칼럼 목록을 지정한다
@@ -60,7 +60,7 @@ public class MemberDao {
 
                 // 파라미터로 전달받은 Connection을 이용해서 PreparedStatement ㅐㅇ성
                 PreparedStatement statement = con.prepareStatement(
-                        "INSERT INTO member (email, password, name, register_date_time) VALUES (?, ?, ?, ?)"
+                        "INSERT INTO member (email, password, name, regdate) VALUES (?, ?, ?, ?)"
                 );
 
                 // 인덱스 파라미터의 값 설정
