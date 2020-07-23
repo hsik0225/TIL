@@ -4,9 +4,13 @@ import com.hyunsiks.spring5.dao.MemberDao;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
+@EnableTransactionManagement
 public class DbConfig {
 
     // close 메소드는 커넥션 풀에 보관된 Connection을 닫는다
@@ -27,6 +31,14 @@ public class DbConfig {
         dataSource.setMaxActive(10);
         return dataSource;
     }
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        DataSourceTransactionManager tm = new DataSourceTransactionManager();
+        tm.setDataSource(dataSource());
+        return tm;
+    }
+
 
     @Bean
     public MemberDao memberDao() {
