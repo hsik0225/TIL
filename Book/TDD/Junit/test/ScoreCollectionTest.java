@@ -1,4 +1,4 @@
-import com.hyunsiks.ScoreCollection;
+import com.hyunsiks.cp1.ScoreCollection;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
