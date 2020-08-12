@@ -4,8 +4,6 @@ import com.hyunsiks.spring5.domain.MemberInfoPrinter;
 import com.hyunsiks.spring5.domain.MemberListPrinter;
 import com.hyunsiks.spring5.domain.MemberSummaryPrinter;
 import com.hyunsiks.spring5.domain.VersionPrinter;
-import com.hyunsiks.spring5.service.ChangePasswordService;
-import com.hyunsiks.spring5.service.MemberRegisterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,16 +28,6 @@ public class AppContext {
         return versionPrinter;
     }
 
-
-    @Bean
-    public MemberRegisterService memberRegisterService() {
-        return new MemberRegisterService();
-    }
-
-    @Bean
-    public ChangePasswordService changePasswordService() {
-        return new ChangePasswordService();
-    }
 
     @Bean
     public MemberSummaryPrinter memberSummaryPrinter() {

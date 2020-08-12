@@ -1,7 +1,6 @@
 package com.hyunsiks.spring5.config;
 
 import com.hyunsiks.spring5.dao.MemberDao;
-import com.hyunsiks.spring5.service.ChangePasswordService;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,10 +45,4 @@ public class DbConfig {
         return new MemberDao(dataSource());
     }
 
-    @Bean
-    public ChangePasswordService changePasswordService() {
-        ChangePasswordService pwdSvc = new ChangePasswordService();
-        pwdSvc.setMemberDao(memberDao());
-        return pwdSvc;
-    }
 }
