@@ -51,4 +51,8 @@ public class TopologicalSort {
         // i에서 진출하는 간선이 더 이상 없으므로 i를 sequence에 추가
         sequence.add(i);
     }
+
+    public static void main(String[] args) {
+        System.out.println(new char[]{'a','b','c'});
+    }
 }
